@@ -1,0 +1,117 @@
+{
+  "variables": [],
+  "info": {
+    "name": "InMemDbTest",
+    "_postman_id": "108d81d5-4d70-8cde-ca37-a585a9621b36",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Hsql get all users",
+      "request": {
+        "url": "http://localhost:8080/users",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "Hsql get user with cart info by userId",
+      "request": {
+        "url": "http://localhost:8080/user/cartinfo/1000",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "Hsql get user with cart only",
+      "request": {
+        "url": "http://localhost:8080/user/cart",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "Hsql get user with cart by userid",
+      "request": {
+        "url": "http://localhost:8080/user/cart/1000",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "Hsql get all carts",
+      "request": {
+        "url": "http://localhost:8080/carts",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "Hsql get all user cart mapping",
+      "request": {
+        "url": "http://localhost:8080/usercartmap",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "Hsql save user",
+      "request": {
+        "url": "http://localhost:8080/user",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": 1003,\n    \"userName\": \"Albert\",\n    \"userEmail\": \"Albert@gmail.com\",\n    \"address\": \"Albert\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "Hsql save users -- list",
+      "request": {
+        "url": "http://localhost:8080/users",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n    {\n        \"userId\": 1004,\n        \"userName\": \"Albert4\",\n        \"userEmail\": \"Albert4@gmail.com\",\n        \"address\": \"Albert4\"\n    },\n    {\n        \"userId\": 1005,\n        \"userName\": \"Albert5\",\n        \"userEmail\": \"Albert5@gmail.com\",\n        \"address\": \"Albert5\"\n    }\n]"
+        },
+        "description": ""
+      },
+      "response": []
+    }
+  ]
+}
