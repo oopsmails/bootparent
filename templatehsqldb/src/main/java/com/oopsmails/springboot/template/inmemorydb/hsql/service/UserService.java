@@ -14,6 +14,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -61,10 +62,16 @@ public class UserService {
 
 
     public List<UserCart> getAllUserCartMapping() {
+//        return jdbcTemplate.query(
+//                "SELECT u.userId, u.userName, c.ID as cartId, c.cartType FROM users u "
+//                        + "LEFT OUTER JOIN carts c ON u.userId = c.userId WHERE c.userId IS NOT NULL",
+//                new Object[]{}, new UserCartRowMapper());
+
         return jdbcTemplate.query(
                 "SELECT u.userId, u.userName, c.ID as cartId, c.cartType FROM users u "
                         + "LEFT OUTER JOIN carts c ON u.userId = c.userId WHERE c.userId IS NOT NULL",
-                new Object[]{}, new UserCartRowMapper());
+                new Object[]{}, new BeanPropertyRowMapper(UserCart.class));
+
     }
 
     public List<UserEntity> findAllUserWithCarts() {
