@@ -11,6 +11,7 @@
         <module>springreactor</module>
         <module>templatehsqldb</module>
         <module>mockrestserviceserver</module>
+        <module>springbootoauth2</module>
     </modules>
     <packaging>pom</packaging>
 
