@@ -15,6 +15,9 @@
     <modules>
         <module>springbootoauth2-auth-server</module>
         <module>springbootoauth2-resource-server</module>
+        <module>springbootoauth2-sso-auth-server</module>
+        <module>springbootoauth2-sso-ui1</module>
+        <module>springbootoauth2-sso-ui2</module>
     </modules>
 
     <properties>
@@ -25,6 +28,11 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <!-- oauth -->
         <dependency>

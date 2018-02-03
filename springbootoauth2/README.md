@@ -47,14 +47,18 @@ actually running on port: 18083, see application.yml
 
 http://localhost:18082/ui1
 --> see login page
+--> click on login, http://localhost:18081/auth/login
+
+or: 
 http://localhost:18083/ui2
 --> see login page
+--> click on login, http://localhost:18081/auth/login
 
 http://localhost:18082/ui1/securedPage
---> redirect to login page
+--> redirect to login page: http://localhost:18081/auth/login
 
 http://localhost:18083/ui2/securedPage
---> redirect to login page
+--> redirect to login page: http://localhost:18081/auth/login
 
 ui1: login
 john
@@ -65,5 +69,8 @@ john
 --> see http://localhost:18083/ui2/securedPage, without login again
 
 http://localhost:18081/auth/login
+
+--> org.thymeleaf.exceptions.templateinputexception error resolving template spring boot
+the folder name should be "templates", instead of "template"
 
 
