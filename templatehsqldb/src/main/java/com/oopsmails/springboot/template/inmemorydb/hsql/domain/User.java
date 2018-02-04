@@ -1,7 +1,4 @@
-/**
- *
- */
-package com.oopsmails.springboot.template.inmemorydb.hsql.model;
+package com.oopsmails.springboot.template.inmemorydb.hsql.domain;
 
 public class User {
 

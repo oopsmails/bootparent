@@ -151,6 +151,8 @@ Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedExcepti
 
 ===> Just comment foreign key creation in sql !!!!
 
-
+-- Do we need to specify foreign keys while creating the tables manually?
+Yes! If you're not using Hibernate's DDL update property (spring.jpa.hibernate.ddl-auto = update), 
+and creating the tables manually, then you'll need to specify foreign keys while creating the tables.
 
 

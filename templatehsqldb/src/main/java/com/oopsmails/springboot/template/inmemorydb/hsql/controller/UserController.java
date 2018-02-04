@@ -1,7 +1,7 @@
 package com.oopsmails.springboot.template.inmemorydb.hsql.controller;
 
 import com.oopsmails.springboot.template.inmemorydb.hsql.domain.UserCart;
-import com.oopsmails.springboot.template.inmemorydb.hsql.model.User;
+import com.oopsmails.springboot.template.inmemorydb.hsql.domain.User;
 import com.oopsmails.springboot.template.inmemorydb.hsql.model.UserEntity;
 import com.oopsmails.springboot.template.inmemorydb.hsql.service.UserService;
 import java.util.List;

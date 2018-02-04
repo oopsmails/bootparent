@@ -5,12 +5,9 @@ package com.oopsmails.springboot.template.inmemorydb.hsql.service;
 
 import com.oopsmails.springboot.template.inmemorydb.hsql.dao.UserRepository;
 import com.oopsmails.springboot.template.inmemorydb.hsql.domain.UserCart;
-import com.oopsmails.springboot.template.inmemorydb.hsql.mapper.UserCartRowMapper;
-import com.oopsmails.springboot.template.inmemorydb.hsql.model.User;
-import com.oopsmails.springboot.template.inmemorydb.hsql.model.UserEntity;
 import com.oopsmails.springboot.template.inmemorydb.hsql.mapper.UserRowMapper;
-import java.util.ArrayList;
-import java.util.List;
+import com.oopsmails.springboot.template.inmemorydb.hsql.domain.User;
+import com.oopsmails.springboot.template.inmemorydb.hsql.model.UserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +18,9 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service

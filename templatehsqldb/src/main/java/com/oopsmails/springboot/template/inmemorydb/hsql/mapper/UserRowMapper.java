@@ -1,6 +1,6 @@
 package com.oopsmails.springboot.template.inmemorydb.hsql.mapper;
 
-import com.oopsmails.springboot.template.inmemorydb.hsql.model.User;
+import com.oopsmails.springboot.template.inmemorydb.hsql.domain.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
