@@ -8,6 +8,15 @@ Test Springboot data jpa.
 1. Run SpringBootDataBaseApplication
 2. Run Postman, import InMemDbTest.postman_collection.json
 
+--> Ref:
+https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
+
+- Posts and Comments are initialized by SpringBootDataBaseApplication.
+- Insert with @OneToMany example, SpringBootDataBaseApplication, run().
+- Mapper example, UserService, getAllUserCartMapping()
+- @JsonIgnore // avoiding StackOverflowError, Comment.java and CartEntity.java
+
+
 
 
 ==========================================
@@ -89,9 +98,34 @@ Caused by: java.sql.SQLSyntaxErrorException: a FOREIGN KEY constraint already ex
 -- FOREIGN KEY (userId) REFERENCES users(userId);
 
 
---
+--> Error: StackOverflowError
 
-spring boot jpa onetomany Infinite recursion (StackOverflowError)
+"java.lang.StackOverflowError: null
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:708)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155)
+	at com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serializeContents(CollectionSerializer.java:149)
+	at com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serialize(CollectionSerializer.java:112)
+	at com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serialize(CollectionSerializer.java:25)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:704)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:689)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:704)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:689)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155)
+
+--> spring boot jpa onetomany Infinite recursion (StackOverflowError)
 --> use 
 
 --> @JsonIgnore <-- added with @ManyToOne, which is reasonable because there is a userId column in table.

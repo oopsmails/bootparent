@@ -1,5 +1,7 @@
 package com.oopsmails.springboot.template.inmemorydb.hsql.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,6 +27,7 @@ public class Comment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
+    @JsonIgnore // avoiding StackOverflowError
     private Post post;
 
     public Comment() {
