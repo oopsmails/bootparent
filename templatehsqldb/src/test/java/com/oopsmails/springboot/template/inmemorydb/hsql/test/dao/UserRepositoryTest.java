@@ -2,7 +2,7 @@ package com.oopsmails.springboot.template.inmemorydb.hsql.test.dao;
 
 import static org.junit.Assert.assertEquals;
 
-import com.oopsmails.springboot.template.inmemorydb.hsql.dao.CartRepository;
+import com.oopsmails.springboot.template.inmemorydb.hsql.dao.CartEntityRepository;
 import com.oopsmails.springboot.template.inmemorydb.hsql.dao.UserRepository;
 import com.oopsmails.springboot.template.inmemorydb.hsql.model.CartEntity;
 import com.oopsmails.springboot.template.inmemorydb.hsql.model.UserEntity;
@@ -21,14 +21,14 @@ public class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Autowired
-    private CartRepository cartRepository;
+    private CartEntityRepository cartEntityRepository;
 
     @Autowired
     private UserRepository userDaoRepository;
 
     @Test
     public void testUserRepositoryFindByCartsNotNull() {
-        List<CartEntity> cartEntityList = cartRepository.findAll();
+        List<CartEntity> cartEntityList = cartEntityRepository.findAll();
         assertEquals(3, cartEntityList.size());
 
         List<UserEntity> userEntityList = userDaoRepository.findAll();

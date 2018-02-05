@@ -1,12 +1,9 @@
 ######################################################
 
-templatehsqldb:
+springjpa:
 
 A project using in memory hsqldb.
 Test Springboot data jpa.
-
-1. Run SpringBootDataBaseApplication
-2. Run Postman, import InMemDbTest.postman_collection.json
 
 --> Ref:
 https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/

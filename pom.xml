@@ -12,6 +12,7 @@
         <module>templatehsqldb</module>
         <module>mockrestserviceserver</module>
         <module>springbootoauth2</module>
+        <module>springjpa</module>
     </modules>
     <packaging>pom</packaging>
 

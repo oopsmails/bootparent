@@ -1,6 +1,6 @@
 package com.oopsmails.springboot.template.inmemorydb.hsql.service;
 
-import com.oopsmails.springboot.template.inmemorydb.hsql.dao.CartRepository;
+import com.oopsmails.springboot.template.inmemorydb.hsql.dao.CartEntityRepository;
 import com.oopsmails.springboot.template.inmemorydb.hsql.model.CartEntity;
 import java.util.List;
 import org.slf4j.Logger;
@@ -19,11 +19,11 @@ public class CartService {
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    private CartRepository cartRepository;
+    private CartEntityRepository cartEntityRepository;
 
     @Transactional(readOnly = true)
     public List<CartEntity> findAll() {
-        return cartRepository.findAll();
+        return cartEntityRepository.findAll();
     }
 
 
