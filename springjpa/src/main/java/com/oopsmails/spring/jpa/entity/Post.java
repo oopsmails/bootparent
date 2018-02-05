@@ -41,6 +41,7 @@ public class Post {
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,
             mappedBy = "post")
+    @OrderBy("id")
     private Set<Comment> comments = new HashSet<>();
 
     public Post() {
