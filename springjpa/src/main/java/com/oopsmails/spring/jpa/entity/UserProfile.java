@@ -1,5 +1,6 @@
 package com.oopsmails.spring.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oopsmails.spring.jpa.model.Gender;
 
 import javax.persistence.*;
@@ -50,6 +51,7 @@ public class UserProfile implements Serializable {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user;
 
     public UserProfile() {
