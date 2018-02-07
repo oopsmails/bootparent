@@ -1,5 +1,6 @@
 package com.oopsmails.spring.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
@@ -36,6 +37,7 @@ public class User implements Serializable {
     @OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
             mappedBy = "user")
+    @JsonManagedReference
     private UserProfile userProfile;
 
     // Hibernate requires a no-arg constructor

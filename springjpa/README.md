@@ -15,6 +15,14 @@ https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example
 
 
 
+====> How to resolve Json Infinite Recursion problem when working with Jackson
+
+http://javasampleapproach.com/spring-framework/spring-boot/resolve-json-infinite-recursion-problems-working-jackson
+
+1. @JsonIgnore, @JsonView can NOT preserve the Bidirectional-Relationships!
+2. {@JsonManagedReference, @JsonBackReference} and @JsonIdentityInfo: can preserve the Bidirectional-Relationships!
+
+
 
 ==========================================
 
