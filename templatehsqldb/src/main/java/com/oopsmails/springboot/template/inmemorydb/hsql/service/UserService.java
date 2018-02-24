@@ -42,6 +42,7 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public List<User> findAll() {
+        logger.debug("========================== test logger: findAll users ==========================");
         return jdbcTemplate.query("select * from users",
                 new UserRowMapper());
     }
@@ -55,6 +56,7 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public List<User> findUserWithCartInfo(int userId) {
+        logger.debug("========================== test logger: findUserWithCartInfo ==========================");
         return jdbcTemplate.query(
                 "SELECT * FROM users u LEFT OUTER JOIN carts c ON u.userId = c.userId where u.userId=?",
                 new Object[]{userId}, new UserRowMapper());
@@ -67,6 +69,7 @@ public class UserService {
 //                        + "LEFT OUTER JOIN carts c ON u.userId = c.userId WHERE c.userId IS NOT NULL",
 //                new Object[]{}, new UserCartRowMapper());
 
+        logger.debug("========================== test logger: getAllUserCartMapping ==========================");
         return jdbcTemplate.query(
                 "SELECT u.userId, u.userName, c.ID as cartId, c.cartType FROM users u "
                         + "LEFT OUTER JOIN carts c ON u.userId = c.userId WHERE c.userId IS NOT NULL",
