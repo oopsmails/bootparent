@@ -13,7 +13,7 @@ import java.io.InputStream;
 @RestController
 @RequestMapping("/backendmock")
 public class StreamingResponseBodyController {
-    @RequestMapping(value = "/downloadFile/{filetype}", method = RequestMethod.GET)
+    @RequestMapping(value = "/downloadFile/{filetype}", method = { RequestMethod.GET, RequestMethod.POST })
     public StreamingResponseBody getSteamingFile(@PathVariable("filetype") String fileType,
                                                  @RequestParam("filename") String fileName,
                                                  HttpServletResponse response) throws IOException {
