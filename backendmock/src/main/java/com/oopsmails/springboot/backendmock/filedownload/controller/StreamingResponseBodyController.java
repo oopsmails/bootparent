@@ -12,6 +12,7 @@ import java.io.InputStream;
 
 @RestController
 @RequestMapping("/backendmock")
+@CrossOrigin
 public class StreamingResponseBodyController {
     @RequestMapping(value = "/downloadFile/{filetype}", method = { RequestMethod.GET, RequestMethod.POST })
     public StreamingResponseBody getSteamingFile(@PathVariable("filetype") String fileType,
@@ -20,6 +21,9 @@ public class StreamingResponseBodyController {
 
         response.setContentType(getContentType(fileType)); //"application/pdf"
         response.setHeader("Content-Disposition", getContentDisposition(fileName));
+
+        response.setHeader("Access-Control-Allow-Origin", "*"); //ok, without WebMvcConfigurer in SpringBootBackendMockApplication
+
         InputStream inputStream = new FileInputStream(new File(getFileNameWithPath(fileType, fileName)));
         return outputStream -> {
             int nRead;
