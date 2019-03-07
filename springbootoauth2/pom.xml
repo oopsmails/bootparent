@@ -2,22 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>bootparent</artifactId>
-        <groupId>com.oopsmails.springboot</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
+    <!--<parent>-->
+        <!--<artifactId>bootparent</artifactId>-->
+        <!--<groupId>com.oopsmails.springboot</groupId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+    <!--</parent>-->
 
+    <groupId>com.oopsmails.springboot.auth2</groupId>
     <artifactId>springbootoauth2</artifactId>
+    <version>2.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
 
     <packaging>pom</packaging>
     <modules>
         <module>springbootoauth2-auth-server</module>
-        <module>springbootoauth2-resource-server</module>
-        <module>springbootoauth2-sso-auth-server</module>
-        <module>springbootoauth2-sso-ui1</module>
-        <module>springbootoauth2-sso-ui2</module>
+        <!--<module>springbootoauth2-resource-server</module>-->
+        <!--<module>springbootoauth2-sso-auth-server</module>-->
+        <!--<module>springbootoauth2-sso-ui1</module>-->
+        <!--<module>springbootoauth2-sso-ui2</module>-->
     </modules>
 
     <properties>
@@ -25,66 +27,133 @@
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-io.version>2.4</commons-io.version>
         <rest-assured.version>2.4.0</rest-assured.version>
+        <spring-security-oauth2.version>2.0.14.RELEASE</spring-security-oauth2.version>
     </properties>
 
-    <dependencies>
+    <!--<dependencies>-->
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.security.oauth</groupId>-->
+            <!--<artifactId>spring-security-oauth2</artifactId>-->
+        <!--</dependency>-->
 
-        <!-- oauth -->
-        <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.security</groupId>-->
+            <!--<artifactId>spring-security-jwt</artifactId>-->
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-jwt</artifactId>
-        </dependency>
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.commons</groupId>-->
+            <!--<artifactId>commons-lang3</artifactId>-->
+            <!--<version>${commons-lang3.version}</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.jayway.restassured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>${rest-assured.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>commons-logging</artifactId>
-                    <groupId>commons-logging</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.security</groupId>-->
+            <!--<artifactId>spring-security-test</artifactId>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jdk8</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.jayway.restassured</groupId>-->
+            <!--<artifactId>rest-assured</artifactId>-->
+            <!--<version>${rest-assured.version}</version>-->
+            <!--<scope>test</scope>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<artifactId>commons-logging</artifactId>-->
+                    <!--<groupId>commons-logging</groupId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
 
-        <!-- jdbc -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
+            <!--<artifactId>jackson-datatype-jdk8</artifactId>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
+        <!--&lt;!&ndash; jdbc &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-jdbc</artifactId>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.hsqldb</groupId>-->
+            <!--<artifactId>hsqldb</artifactId>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+
+    <!--</dependencies>-->
+
+    <!--<dependencyManagement>-->
+        <!--<dependencies>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter-security</artifactId>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.security.oauth</groupId>-->
+                <!--<artifactId>spring-security-oauth2</artifactId>-->
+                <!--<version>${spring-security-oauth2.version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.security</groupId>-->
+                <!--<artifactId>spring-security-jwt</artifactId>-->
+                <!--<version>1.0.8.RELEASE</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.security</groupId>-->
+                <!--<artifactId>spring-security-test</artifactId>-->
+                <!--<version>5.0.3.RELEASE</version>-->
+                <!--<scope>test</scope>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.apache.commons</groupId>-->
+                <!--<artifactId>commons-lang3</artifactId>-->
+                <!--<version>${commons-lang3.version}</version>-->
+            <!--</dependency>-->
+
+
+            <!--<dependency>-->
+                <!--<groupId>com.jayway.restassured</groupId>-->
+                <!--<artifactId>rest-assured</artifactId>-->
+                <!--<version>${rest-assured.version}</version>-->
+                <!--<scope>test</scope>-->
+                <!--<exclusions>-->
+                    <!--<exclusion>-->
+                        <!--<artifactId>commons-logging</artifactId>-->
+                        <!--<groupId>commons-logging</groupId>-->
+                    <!--</exclusion>-->
+                <!--</exclusions>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
+                <!--<artifactId>jackson-datatype-jdk8</artifactId>-->
+                <!--<version>2.9.4</version>-->
+            <!--</dependency>-->
+
+            <!--&lt;!&ndash; jdbc &ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-jdbc</artifactId>-->
+                <!--<version>5.0.4.RELEASE</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.hsqldb</groupId>-->
+                <!--<artifactId>hsqldb</artifactId>-->
+                <!--<version>2.4.0</version>-->
+                <!--<scope>runtime</scope>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
+    <!--</dependencyManagement>-->
 
 </project>

@@ -15,7 +15,16 @@ import java.io.InputStream;
 
 @RestController
 @RequestMapping("/backendmock")
-@CrossOrigin
+//@CrossOrigin
+@CrossOrigin(origins = "*",
+        methods = {RequestMethod.POST, RequestMethod.OPTIONS},
+        allowedHeaders = {"Content-Type",
+                "X-Requested-With",
+                "accept", "Origin",
+                "Access-Control-Request-Method",
+                "Access-Control-Request-Headers"},
+        exposedHeaders = {"Access-Control-Allow-Origin",
+                "Access-Control-Allow-Credentials"})
 public class StreamingResponseBodyController {
     private static final org.slf4j.Logger slf4jLogger = LoggerFactory.getLogger(StreamingResponseBodyController.class);
 

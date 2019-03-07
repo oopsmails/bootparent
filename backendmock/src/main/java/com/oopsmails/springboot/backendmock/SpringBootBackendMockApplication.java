@@ -30,6 +30,7 @@ public class SpringBootBackendMockApplication {
                 registry
                         .addMapping("/backendmock/**")
                         .allowedOrigins("http://localhost:4200")
+//                        .allowedOrigins("http://localhost:8080")
                         .allowedMethods("*");
             }
         };
